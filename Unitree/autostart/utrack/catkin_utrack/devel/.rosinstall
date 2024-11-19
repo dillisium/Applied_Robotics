@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/pi/Unitree/autostart/utrack/catkin_utrack/devel/setup.sh

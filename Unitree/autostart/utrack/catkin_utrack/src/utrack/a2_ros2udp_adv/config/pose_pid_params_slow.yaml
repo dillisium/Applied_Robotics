@@ -1,0 +1,38 @@
+%YAML:1.0
+
+# Parameters for the pose pid tracker
+kp_x: 2.5
+ki_x: 1.0 # set to 0 when want no integration; set to about 1.0 when integration is need
+kd_x: 0.0
+
+kp_y: 1.6
+ki_y: 0.0
+kd_y: 0.0
+
+kp_yaw: 8.0
+ki_yaw: 0.0
+kd_yaw: 0.0
+
+integration_max_ex: 0.7 # 0.5-达到头部与身体平齐
+integration_max_ey: 0.5
+integration_max_eyaw: 0.3
+
+vx_max: 1.5   # m/s
+vx_min: -0.8  # m/s
+vy_max: 0.8   # m/s
+vr_max: 2.0   # rad/s
+
+at_max: 4.0   # m/s^2
+ar_max: 25    # rad/s^2
+
+kp_order_x: 1.1
+kp_order_x_range: 0.5
+kp_order_y: 1.0
+kp_order_y_range: 0.0
+kp_order_yaw: 2.0
+kp_order_yaw_range: 0.25
+
+# Parameters for the kinematic filter
+gap_limit_vx: 0.5
+gap_limit_vy: 0.3
+gap_limit_vyaw: 0.5

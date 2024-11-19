@@ -1,0 +1,11 @@
+<launch>
+
+  <node pkg="a2_ros2udp_adv" type="ros2udp_motion_mode_adv" name="ros2udp_motion_mode_adv" output="screen" launch-prefix="taskset -c 2">
+  </node>
+
+  <node pkg="a2_ukd" type="ukd_triple_udp_node" name="ukd_triple_udp_node" output="screen" launch-prefix="taskset -c 3">
+  </node>
+
+  <node pkg="a2_ukd2goal" type="ukd_triple_2_goal" name="ukd_triple_2_goal" output="screen" launch-prefix="taskset -c 3"/>
+
+</launch> 

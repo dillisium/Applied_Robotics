@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/lcm_msgs/ultrasonic_data.hpp
+lcm/lcm_coretypes.h
+-
+
+/home/pi/Unitree/autostart/utrack/ultrasonic_listener_example/src/ultrasonic_listener_lcm.cpp
+stdio.h
+-
+unistd.h
+-
+lcm/lcm-cpp.hpp
+-
+lcm_msgs/ultrasonic_data.hpp
+/home/pi/Unitree/autostart/utrack/ultrasonic_listener_example/src/lcm_msgs/ultrasonic_data.hpp
+

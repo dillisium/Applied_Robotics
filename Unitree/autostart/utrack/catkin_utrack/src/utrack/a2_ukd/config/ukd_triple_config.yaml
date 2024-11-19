@@ -1,0 +1,14 @@
+%YAML:1.0
+# Application Version to show in APP, each range is 0-255
+version_0: 3 
+version_1: 9
+
+# Utrack Configuration
+ukd_base_bias: 0.0    # 方位角偏差。单位度。
+ukd_tag_bias: 25.0      # 标签AOA角度偏差。单位度。
+ukd_tag_coeff: 1.0      # 标签AOA角度斜率。
+ukd_distance_bias: 0.0  # 距离偏差。单位m。
+rotation_compensation_clockwise: -0.00  # 角速度补偿系数（顺时针）
+rotation_compensation_counter: -0.00    # 角速度补偿系数（逆时针）
+enable_pitch_estimation: 0  # 是否打开pitch估计: 0-关闭; 1-打开
+enable_utrack_always: 0     # 是否默认一直打开utrack（使能后APP无法再关闭utrack，默认为关闭=0）

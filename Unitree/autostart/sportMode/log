@@ -1,0 +1,10 @@
+UDP Initialized. socketfd: 9   Port: 8008
+UDP Initialized. socketfd: 10   Port: 8010
+UDP Initialized. socketfd: 11   Port: 8082
+UDP Initialized. socketfd: 12   Port: 8018
+[Wait] for check
+Check passed
+GO1 EDU
+[Wait] for trigger: SDK or L1 + start
+[UDP Connected] client! Client IP:192.168.123.161 port:8083
+[UDP Disconnected] client! socketfd:11 Old Client IP:192.168.123.161 port:8083

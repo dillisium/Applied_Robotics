@@ -1,0 +1,43 @@
+client:
+  uuid: c8af2ac2-30ce-11ec-8462-02420a000173
+  userID: 65d22c00-00c6-11ec-8549-85142dbb7e3e
+  name: raspberrypi
+  brand: 0
+  department: 1
+  logLevel: 1
+  maxLogSize: 1048576
+  serviceStopTimeout: 30
+  ruleInterval: 60
+  version: 1.143.0.15537
+  autoUpgradeVersion: ""
+  token: XGXMJh
+  ipTunnel: 0
+  yz: 0
+  sdwan: 0
+  production: 0
+  scriptDaemon: false
+  appCompress: true
+  interface: ""
+  gateway: ""
+  remarks: ""
+mq:
+  host: cloud.zhexi.tech
+  ip: 45.113.202.57
+  port: "5671"
+  reconnectInterval: 10
+gateway:
+  port: "5670"
+yuanzhi:
+  host: yz.zhexi.tech
+  version: ""
+sdwan:
+  turnoff: false
+  threadCount: 0
+  relayOnly: false
+offseterror:
+  worker: 1688
+  daemon: 158
+  control: 0
+  dumpLogTime: 0
+  errorCount: 1
+  reportDate: 2021-10-19T02:23:02.796397172-09:00

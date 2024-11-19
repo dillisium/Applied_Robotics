@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/ultraSoundSDK_RasPi/UltraSound_UART.h
+string
+-
+stdint.h
+-
+vector
+-
+iostream
+-
+sys/time.h
+-
+unistd.h
+-
+
+/home/pi/ultraSoundSDK_RasPi/main.cpp
+UltraSound_UART.h
+/home/pi/ultraSoundSDK_RasPi/UltraSound_UART.h
+iostream
+-
+unistd.h
+-
+

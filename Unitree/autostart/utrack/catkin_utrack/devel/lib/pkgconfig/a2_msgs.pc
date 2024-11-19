@@ -1,0 +1,8 @@
+prefix=/home/pi/Unitree/autostart/utrack/catkin_utrack/devel
+
+Name: a2_msgs
+Description: Description of a2_msgs
+Version: 0.0.0
+Cflags: -I/home/pi/Unitree/autostart/utrack/catkin_utrack/devel/include
+Libs: -L${prefix}/lib 
+Requires: std_msgs message_runtime

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+  <node pkg="pkg_lcm" type="node_lcm" name="node_lcm" output="screen"/>
+<!--  <node pkg="pkg_pointcloud" type="node_pcl_process" name="node_pcl_process" output="screen"/>-->
+  <node pkg="pkg_pointcloud" type="node_obstacle_traverse" name="node_obstacle_traverse" output="screen"/>
+  <node pkg="pkg_pointcloud" type="node_obstacle_avoidance" name="node_obstacle_avoidance"/>
+<!--  <arg name="user_debug" default="false"/>-->
+<!--  <param name="robot_description" command="$(find xacro)/xacro -inorder '$(find go1_description)/xacro/robot.xacro'
+        DEBUG:=$(arg user_debug)"/>
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>-->
+</launch>

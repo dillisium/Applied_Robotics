@@ -3,30 +3,40 @@ Route Traffic Through wlan2 Add a temporary default route to prioritize wlan2 fo
 
 bash
 Copy code
+```
 sudo ip route add default via 192.168.171.254 dev wlan2
+```
 This temporarily overrides the eth0 default route, allowing internet traffic to go through wlan2.
 
 Download the Library Use your package manager (e.g., apt, pip) to download the required library:
 
 bash
 Copy code
+```
 sudo apt update
 sudo apt install <library_name>
+```
 Or for Python libraries:
 
 bash
 Copy code
+```
 pip3 install <library_name>
+```
 Restore the Original Default Route After the download is complete, remove the temporary route and restore the original one:
 
 bash
 Copy code
+```
 sudo ip route del default via 192.168.171.254 dev wlan2
+```
 Confirm that the original route is restored:
 
 bash
 Copy code
+```
 ip route show
+```
 Download Without Altering Default Routes
 If you prefer not to change the default route for all traffic, you can specify the wlan2 interface directly for downloads:
 

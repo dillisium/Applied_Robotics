@@ -10,3 +10,7 @@ https://www.youtube.com/watch?v=Wnd5IUNbXnI
 https://www.youtube.com/watch?v=o6JtfTM3ArY
 https://www.youtube.com/watch?v=nafv21HeeEM Transfer Image by using Camera SDK
 https://www.youtube.com/watch?v=tTCbdul7xsc Controlling Unitree Robots with Unitree_legged_sdk
+
+https://github.com/Marnonel6/Guide_dog_Unitree_Go1?tab=readme-ov-file - voice recognition Guide dog
+https://github.com/unitreerobotics/UnitreecameraSDK - cameraSDK
+https://github.com/MAVProxyUser/YushuTechUnitreeGo1?tab=readme-ov-file#robot-internal-architecture - common information. commands

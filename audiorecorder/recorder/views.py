@@ -8,6 +8,7 @@ import websockets
 WEBSOCKET_URL = "ws://localhost:8765"
 
 COMMAND_MAPPING = {
+    "pizza" : "straightHand",
     "go forward": "goForward",
     "forward": "goForward",
     "go, walk": "goForward",
@@ -32,8 +33,17 @@ def simplify_command(command):
     return COMMAND_MAPPING.get(command, "unknown")
 
 
+# async def send_command_to_js(command):
+#     async with websockets.connect(WEBSOCKET_URL) as websocket:
+#         await websocket.send(command)
+#         print(f"Sent command: {command}")
 async def send_command_to_js(command):
     async with websockets.connect(WEBSOCKET_URL) as websocket:
+        # Send the "stand" command first
+        # await websocket.send("walk")
+        # print(f"Sent command: walk")
+
+        # Send the actual command
         await websocket.send(command)
         print(f"Sent command: {command}")
 

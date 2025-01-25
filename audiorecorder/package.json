@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@droneblocks/go1-js": "^0.1.5",
+    "ws": "^8.18.0"
+  }
+}

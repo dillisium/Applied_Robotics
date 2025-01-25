@@ -24,11 +24,11 @@ const COMMAND_ACTIONS = {
         console.log("Robot moving backward");
     },
     turnLeft: async () => {
-        await MyRobotDog.turnLeft(0.5, 500);
+        await MyRobotDog.turnLeft(0.5, 1000);
         console.log("Robot turning left");
     },
     turnRight: async () => {
-        await MyRobotDog.turnRight(0.5, 500);
+        await MyRobotDog.turnRight(0.5, 1000);
         console.log("Robot turning right");
     },
     stop: async () => {
@@ -47,6 +47,9 @@ const COMMAND_ACTIONS = {
         await MyRobotDog.setMode(Go1Mode.straightHand1)
         console.log("Robot straight Hand");
     },
+    helicopter: async () => {
+        await MyRobotDog.turnRight(0.5, 4000)
+    }
 };
 
 

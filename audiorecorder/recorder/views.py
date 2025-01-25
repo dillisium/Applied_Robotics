@@ -22,6 +22,8 @@ COMMAND_MAPPING = {
     "dance two": "dance2",
     "straight hand": "straightHand",
     "standing up": "straightHand",
+    "pizza": "straightHand",
+    "helicopter": "helicopter",
 }
 
 def record_audio(request):

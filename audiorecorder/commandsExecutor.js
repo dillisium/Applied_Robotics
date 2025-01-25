@@ -15,21 +15,37 @@ const COMMAND_ACTIONS = {
         await MyRobotDog.setMode(Go1Mode.walk);
         console.log("Robot walking");
     },
+    stand: async () => {
+        await MyRobotDog.setMode(Go1Mode.stand);
+        console.log("Robot standing");
+    },
     goBackward: async () => {
         await MyRobotDog.goBackward(0.25, 2000);
         console.log("Robot moving backward");
     },
     turnLeft: async () => {
-        await MyRobotDog.turnLeft(0.5, 1000);
+        await MyRobotDog.turnLeft(0.5, 500);
         console.log("Robot turning left");
     },
     turnRight: async () => {
-        await MyRobotDog.turnRight(0.5, 1000);
+        await MyRobotDog.turnRight(0.5, 500);
         console.log("Robot turning right");
     },
     stop: async () => {
         await MyRobotDog.setMode(Go1Mode.standUp);
         console.log("Robot stopped");
+    },
+    dance1: async () => {
+        await MyRobotDog.setMode(Go1Mode.dance1);
+        console.log("Robot dancing 1");
+    },
+    dance2: async () => {
+        await MyRobotDog.setMode(Go1Mode.dance2);
+        console.log("Robot dancing 2")
+    },
+    straightHand: async () => {
+        await MyRobotDog.setMode(Go1Mode.straightHand1)
+        console.log("Robot straight Hand");
     },
 };
 

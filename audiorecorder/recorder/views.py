@@ -10,7 +10,6 @@ WEBSOCKET_URL = "ws://localhost:8765"
 COMMAND_MAPPING = {
     "go forward": "goForward",
     "forward": "goForward",
-    "walk": "walk",
     "go, walk": "goForward",
     "go back": "goBackward",
     "back": "goBackward",
@@ -18,23 +17,26 @@ COMMAND_MAPPING = {
     "left": "turnLeft",
     "turn right": "turnRight",
     "right": "turnRight",
-    "stop": "stop",
     "dance one": "dance1",
-    "straight Hand": "straightHand",
+    "dance two": "dance2",
+    "straight hand": "straightHand",
     "standing up": "straightHand",
 }
 
 def record_audio(request):
     return render(request, 'recorder/record.html')
 
+
 def simplify_command(command):
     command = command.lower()
     return COMMAND_MAPPING.get(command, "unknown")
+
 
 async def send_command_to_js(command):
     async with websockets.connect(WEBSOCKET_URL) as websocket:
         await websocket.send(command)
         print(f"Sent command: {command}")
+
 
 @csrf_exempt
 def process_audio(request):

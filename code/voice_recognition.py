@@ -1,5 +1,4 @@
 import speech_recognition as sr
-import json
 import asyncio
 import websockets
 
@@ -18,6 +17,9 @@ COMMAND_MAPPING = {
     "turn right": "turnRight",
     "right": "turnRight",
     "stop": "stop",
+    "dance one": "dance1",
+    "straight Hand": "straightHand",
+    "standing up": "straightHand",
 }
 
 

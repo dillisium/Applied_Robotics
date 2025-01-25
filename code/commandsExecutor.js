@@ -31,6 +31,9 @@ const COMMAND_ACTIONS = {
         await MyRobotDog.setMode(Go1Mode.standUp);
         console.log("Robot stopped");
     },
+    straightHand: async () => {
+        await MyRobotDog.setMode(Go1Mode.straightHand1)
+    }
 };
 
 

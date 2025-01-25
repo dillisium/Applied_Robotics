@@ -16,3 +16,5 @@ https://github.com/unitreerobotics/UnitreecameraSDK - cameraSDK
 https://github.com/MAVProxyUser/YushuTechUnitreeGo1?tab=readme-ov-file#robot-internal-architecture - common information. commands
 https://github.com/chinmaynehate/go1pylib/tree/main?tab=readme-ov-file - robot control 
 https://unitree-docs.readthedocs.io/en/latest/get_started/Go1_Edu.html - go1 edu
+
+**L1 + Start** = To stand up and start work with robot

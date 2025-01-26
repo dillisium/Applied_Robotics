@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record PCM WAV Audio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div style="text-align: center; padding: 20px">
+        <h1>Record PCM WAV Audio</h1>
+        <button id="recordButton" class="btn btn-success" style="margin: 10px;">Start Recording</button>
+        <button id="stopButton" class="btn btn-danger" disabled style="margin: 10px;">Stop Recording</button>
+        <audio id="audioPlayback" controls style="margin-top: 15px; width: 100%;"></audio>
+        <a id="downloadLink" class="btn btn-primary" style="display: none; margin-top: 10px;">Download</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let audioContext;
+        let mediaStream;
+        let mediaStreamSource;
+        let scriptProcessor;
+        let audioData = [];
+
+        const recordButton = document.getElementById('recordButton');
+        const stopButton = document.getElementById('stopButton');
+        const audioPlayback = document.getElementById('audioPlayback');
+        const downloadLink = document.getElementById('downloadLink');
+
+        recordButton.addEventListener('click', async () => {
+            // Reset the audio data array
+            audioData = [];
+
+            // Reinitialize the audio context and other variables
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            mediaStreamSource = audioContext.createMediaStreamSource(mediaStream);
+
+            scriptProcessor = audioContext.createScriptProcessor(4096, 1, 1);
+            scriptProcessor.onaudioprocess = (event) => {
+                const channelData = event.inputBuffer.getChannelData(0);
+                audioData.push(new Float32Array(channelData));
+            };
+
+            mediaStreamSource.connect(scriptProcessor);
+            scriptProcessor.connect(audioContext.destination);
+
+            recordButton.disabled = true;
+            stopButton.disabled = false;
+        });
+
+        stopButton.addEventListener('click', () => {
+            scriptProcessor.disconnect();
+            mediaStreamSource.disconnect();
+            mediaStream.getTracks().forEach(track => track.stop());
+
+            const wavBlob = encodeWAV(audioData, audioContext.sampleRate);
+            const url = URL.createObjectURL(wavBlob);
+
+            audioPlayback.src = url;
+            downloadLink.href = url;
+            downloadLink.download = 'recorded_audio.wav';
+            downloadLink.style.display = 'block';
+
+            // Send audio to the server
+            const formData = new FormData();
+            formData.append('audio', wavBlob, 'recorded_audio.wav');
+            fetch('/process_audio/', {
+                method: 'POST',
+                body: formData
+            });
+
+            recordButton.disabled = false;
+            stopButton.disabled = true;
+        });
+
+        function encodeWAV(samples, sampleRate) {
+            const bufferLength = samples.reduce((acc, curr) => acc + curr.length, 0);
+            const buffer = new ArrayBuffer(44 + bufferLength * 2); // 16-bit PCM
+            const view = new DataView(buffer);
+
+            // Write WAV header
+            writeString(view, 0, 'RIFF');
+            view.setUint32(4, 36 + bufferLength * 2, true); // File size
+            writeString(view, 8, 'WAVE');
+            writeString(view, 12, 'fmt ');
+            view.setUint32(16, 16, true); // Subchunk1Size
+            view.setUint16(20, 1, true); // Audio format (PCM)
+            view.setUint16(22, 1, true); // Num channels
+            view.setUint32(24, sampleRate, true); // Sample rate
+            view.setUint32(28, sampleRate * 2, true); // Byte rate
+            view.setUint16(32, 2, true); // Block align
+            view.setUint16(34, 16, true); // Bits per sample
+            writeString(view, 36, 'data');
+            view.setUint32(40, bufferLength * 2, true); // Subchunk2Size
+
+            // Write PCM samples
+            let offset = 44;
+            samples.forEach(sample => {
+                for (let i = 0; i < sample.length; i++) {
+                    const value = Math.max(-1, Math.min(1, sample[i])); // Clamping
+                    view.setInt16(offset, value < 0 ? value * 0x8000 : value * 0x7FFF, true);
+                    offset += 2;
+                }
+            });
+
+            return new Blob([view], { type: 'audio/wav' });
+        }
+
+        function writeString(view, offset, string) {
+            for (let i = 0; i < string.length; i++) {
+                view.setUint8(offset + i, string.charCodeAt(i));
+            }
+        }
+    </script>
+</body>
+</html>

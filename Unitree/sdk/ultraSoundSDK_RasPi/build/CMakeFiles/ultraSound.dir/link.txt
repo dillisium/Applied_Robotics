@@ -1,1 +1,0 @@
-/usr/bin/c++   -O3   CMakeFiles/ultraSound.dir/main.cpp.o  -o ../bin/ultraSound  -lultraSound_SDK -lwiringPi 

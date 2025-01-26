@@ -1,8 +1,0 @@
-prefix=/home/pi/Unitree/autostart/utrack/catkin_utrack/devel
-
-Name: a2_ukd2goal
-Description: Description of a2_ukd2goal
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: roscpp sensor_msgs std_msgs roslib a2_msgs

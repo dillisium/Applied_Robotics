@@ -1,2 +1,0 @@
-module_data/lcm:module_data/pointcloud:module_data/robot/go1_description
--DCATKIN_DEVEL_PREFIX=/home/pi/Unitree/autostart/07obstacle/devel -DCMAKE_INSTALL_PREFIX=/home/pi/Unitree/autostart/07obstacle/install -G Unix Makefiles

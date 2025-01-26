@@ -1,3 +1,0 @@
-/home/pi/ultraSoundSDK_RasPi/build/CMakeFiles/rebuild_cache.dir
-/home/pi/ultraSoundSDK_RasPi/build/CMakeFiles/ultraSound.dir
-/home/pi/ultraSoundSDK_RasPi/build/CMakeFiles/edit_cache.dir

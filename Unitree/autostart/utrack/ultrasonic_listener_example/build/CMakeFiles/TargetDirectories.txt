@@ -1,3 +1,0 @@
-/home/pi/Unitree/autostart/utrack/ultrasonic_listener_example/build/CMakeFiles/rebuild_cache.dir
-/home/pi/Unitree/autostart/utrack/ultrasonic_listener_example/build/CMakeFiles/ultrasonic_listener_lcm.dir
-/home/pi/Unitree/autostart/utrack/ultrasonic_listener_example/build/CMakeFiles/edit_cache.dir

@@ -10,3 +10,9 @@ https://www.youtube.com/watch?v=Wnd5IUNbXnI
 https://www.youtube.com/watch?v=o6JtfTM3ArY
 https://www.youtube.com/watch?v=nafv21HeeEM Transfer Image by using Camera SDK
 https://www.youtube.com/watch?v=tTCbdul7xsc Controlling Unitree Robots with Unitree_legged_sdk
+
+pi@raspberrypi:~ $ grep Model /proc/cpuinfo
+Model           : Raspberry Pi Compute Module 4 Rev 1.0
+192.168.171.21
+192.168.12.1
+192.168.123.161

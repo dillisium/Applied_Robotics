@@ -11,8 +11,18 @@ https://www.youtube.com/watch?v=o6JtfTM3ArY
 https://www.youtube.com/watch?v=nafv21HeeEM Transfer Image by using Camera SDK
 https://www.youtube.com/watch?v=tTCbdul7xsc Controlling Unitree Robots with Unitree_legged_sdk
 
+<<<<<<< HEAD
 pi@raspberrypi:~ $ grep Model /proc/cpuinfo
 Model           : Raspberry Pi Compute Module 4 Rev 1.0
 192.168.171.21
 192.168.12.1
 192.168.123.161
+=======
+https://github.com/Marnonel6/Guide_dog_Unitree_Go1?tab=readme-ov-file - voice recognition Guide dog
+https://github.com/unitreerobotics/UnitreecameraSDK - cameraSDK
+https://github.com/MAVProxyUser/YushuTechUnitreeGo1?tab=readme-ov-file#robot-internal-architecture - common information. commands
+https://github.com/chinmaynehate/go1pylib/tree/main?tab=readme-ov-file - robot control 
+https://unitree-docs.readthedocs.io/en/latest/get_started/Go1_Edu.html - go1 edu
+
+**L1 + Start** = To stand up and start work with robot
+>>>>>>> origin/Omena

@@ -1,0 +1,24 @@
+{
+  "name": "applied_robotics_dillisium",
+  "version": "1.0.0",
+  "description": "https://github.com/MAVProxyUser/YushuTechUnitreeGo1?tab=readme-ov-file#robot-internal-architecture  \r https://github.com/geyang/unitree-go1-setup-guide  \r https://www.docs.quadruped.de/projects/go1/html/operation.html  \r https://github.com/unitreerobotics/unitree_legged_sdk  \r https://www.youtube.com/watch?v=-Ag95gOYTCU  \r https://github.com/maggusscheppi/Go1?tab=readme-ov-file#run-your-own-scripts-at-boot  \r https://www.youtube.com/results?search_query=unitree+go+1+how+to+upload+code+python  \r https://www.youtube.com/watch?v=XqZax8b3YdY\r https://www.youtube.com/watch?v=Wnd5IUNbXnI\r https://www.youtube.com/watch?v=o6JtfTM3ArY\r https://www.youtube.com/watch?v=nafv21HeeEM Transfer Image by using Camera SDK\r https://www.youtube.com/watch?v=tTCbdul7xsc Controlling Unitree Robots with Unitree_legged_sdk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dillisium/Applied_Robotics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dillisium/Applied_Robotics/issues"
+  },
+  "homepage": "https://github.com/dillisium/Applied_Robotics#readme",
+  "dependencies": {
+    "@droneblocks/go1-js": "^0.1.5",
+    "ws": "^8.18.0"
+  }
+}

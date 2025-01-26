@@ -4,11 +4,10 @@ import {WebSocketServer} from "ws";
 
 const MyRobotDog = new Go1({ host: "192.168.171.20" });
 await MyRobotDog.init();
-await MyRobotDog.setMode(Go1Mode.walk);
 
 const COMMAND_ACTIONS = {
     goForward: async () => {
-        await MyRobotDog.goForward(0.25, 4000);
+        await MyRobotDog.goForward(0.25, 2000);
         console.log("Robot moving forward");
     },
     walk: async () => {
@@ -20,7 +19,7 @@ const COMMAND_ACTIONS = {
         console.log("Robot standing");
     },
     goBackward: async () => {
-        await MyRobotDog.goBackward(0.25, 1000);
+        await MyRobotDog.goBackward(0.25, 2000);
         console.log("Robot moving backward");
     },
     turnLeft: async () => {
@@ -48,7 +47,7 @@ const COMMAND_ACTIONS = {
         console.log("Robot straight Hand");
     },
     helicopter: async () => {
-        await MyRobotDog.turnRight(0.5, 4000)
+        await MyRobotDog.turnRight(1, 4000)
     }
 };
 
